@@ -1,0 +1,43 @@
+name: dose_app
+description: حاسبة الجرعات التوعوية - مستشفى بدية
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  # قائمة الصور والأصول
+  assets:
+    - assets/logo.png
+    - assets/child.png
+    - assets/omol.png
+    - assets/brufen.png
+    - assets/adol.png
+    - assets/chlorphen.png
+    - assets/coldrin.png
+    - assets/allergin.png
+    - assets/unifed.png
+    - assets/antibiotic.png
+
+  # الخطوط
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
