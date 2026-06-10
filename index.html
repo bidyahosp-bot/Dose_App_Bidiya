@@ -2,28 +2,25 @@
 <html>
 <head>
   <base href="/Dose_App_Bidiya/">
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="حاسبة الجرعات التوعوية للأطفال">
+
+  <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="مستشفى بدية">
-  <meta name="theme-color" content="#00796b">
-  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-title" content="حاسبة جرعات الأطفال">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="icons/Icon-152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/Icon-180.png">
-  <link rel="apple-touch-icon" sizes="167x167" href="icons/Icon-167.png">
-  <title>حاسبة الجرعات - مستشفى بدية</title>
-  <script>
-    window.addEventListener('load', () => {
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/flutter_service_worker.js');
-      }
-    });
-  </script>
+
+  <!-- Android PWA -->
+  <meta name="theme-color" content="#00796b">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>حاسبة جرعات الأطفال - مستشفى بدية</title>
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <script src="flutter_bootstrap.js"></script>
+  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
