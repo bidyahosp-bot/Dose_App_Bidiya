@@ -2,23 +2,46 @@
 <html>
 <head>
   <base href="/Dose_App_Bidiya/">
-
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="حاسبة الجرعات التوعوية للأطفال">
+  <meta name="description" content="حاسبة الجرعات التوعوية للأطفال - مستشفى بدية">
 
-  <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="حاسبة جرعات الأطفال">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Android PWA -->
   <meta name="theme-color" content="#00796b">
   <meta name="mobile-web-app-capable" content="yes">
 
   <title>حاسبة جرعات الأطفال - مستشفى بدية</title>
   <link rel="manifest" href="manifest.json">
+
+  <script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+
+    window.isAppInstalled = () => window.matchMedia('(display-mode: standalone)').matches;
+
+    window.installApp = () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            deferredPrompt = null;
+          }
+        });
+      } else {
+        alert('خاصية التثبيت غير متاحة حالياً. يمكنك تثبيت التطبيق من قائمة المتصفح.');
+      }
+    };
+
+    window.addEventListener('appinstalled', () => {
+      deferredPrompt = null;
+    });
+  </script>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
